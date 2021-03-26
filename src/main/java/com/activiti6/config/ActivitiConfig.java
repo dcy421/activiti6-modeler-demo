@@ -12,12 +12,13 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ActivitiConfig implements ProcessEngineConfigurationConfigurer {
 
+    private final static String FONT_NAME = "宋体";
 
     @Override
     public void configure(SpringProcessEngineConfiguration processEngineConfiguration) {
-        processEngineConfiguration.setActivityFontName("宋体");
-        processEngineConfiguration.setLabelFontName("宋体");
-        processEngineConfiguration.setAnnotationFontName("宋体");
+        processEngineConfiguration.setActivityFontName(FONT_NAME);
+        processEngineConfiguration.setLabelFontName(FONT_NAME);
+        processEngineConfiguration.setAnnotationFontName(FONT_NAME);
         StrongUuidGenerator uuidGenerator = new StrongUuidGenerator();
         processEngineConfiguration.setIdGenerator(uuidGenerator);
     }
